@@ -197,9 +197,10 @@ function initDashboardFilters() {
             // Add active to clicked chip
             this.classList.add('active');
             
-            // Filter tutorials (in a real app, this would filter the content)
-            const filterValue = this.textContent.trim();
+            // Filter tutorials - Get text from the last span (not the icon)
+            const filterValue = this.querySelector('span:last-child').textContent.trim();
             console.log('Filtering by:', filterValue);
+            filterTutorialsByTool(filterValue);
         });
     });
 
@@ -211,6 +212,449 @@ function initDashboardFilters() {
             // In a real app, this would open the tutorial
         });
     });
+}
+
+// ==========================================
+// Tutorial Data by Platform
+// ==========================================
+const tutorialsByPlatform = {
+    'Zoom': [
+        {
+            icon: '🎥',
+            tool: 'Zoom',
+            title: 'Cómo crear salas de reunión en Zoom',
+            description: 'Aprende a organizar grupos pequeños de estudiantes en salas separadas durante tus clases virtuales.',
+            badge: 'Video',
+            duration: '5:30',
+            views: '2.3k',
+            rating: '4.8',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        },
+        {
+            icon: '🎥',
+            tool: 'Zoom',
+            title: 'Grabar y compartir clases en Zoom',
+            description: 'Tutorial completo sobre cómo grabar tus clases en la nube y compartirlas con estudiantes.',
+            badge: 'Video',
+            duration: '6:45',
+            views: '1.9k',
+            rating: '4.7',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        },
+        {
+            icon: '🎥',
+            tool: 'Zoom',
+            title: 'Usar anotaciones y pizarra en Zoom',
+            description: 'Descubre cómo usar las herramientas de anotación para hacer tus clases más interactivas.',
+            badge: 'Guía',
+            duration: '8 min',
+            views: '1.5k',
+            rating: '4.9',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        },
+        {
+            icon: '🎥',
+            tool: 'Zoom',
+            title: 'Gestionar participantes y seguridad',
+            description: 'Aprende a configurar salas de espera, controlar el micrófono y evitar interrupciones.',
+            badge: 'Video',
+            duration: '7:20',
+            views: '2.1k',
+            rating: '4.8',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+        }
+    ],
+    'Google Classroom': [
+        {
+            icon: '📚',
+            tool: 'Google Classroom',
+            title: 'Subir tareas y calificar en Classroom',
+            description: 'Guía paso a paso para asignar tareas, recibir entregas y proporcionar retroalimentación.',
+            badge: 'Guía',
+            duration: '10 min',
+            views: '1.8k',
+            rating: '4.9',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        },
+        {
+            icon: '📚',
+            tool: 'Google Classroom',
+            title: 'Crear una clase desde cero en Classroom',
+            description: 'Aprende a configurar tu primera clase, agregar estudiantes y organizar materiales.',
+            badge: 'Video',
+            duration: '9:15',
+            views: '3.2k',
+            rating: '4.8',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        },
+        {
+            icon: '📚',
+            tool: 'Google Classroom',
+            title: 'Usar rúbricas para calificación',
+            description: 'Crea rúbricas personalizadas que faciliten la evaluación objetiva de tareas.',
+            badge: 'Guía',
+            duration: '12 min',
+            views: '1.4k',
+            rating: '4.9',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        },
+        {
+            icon: '📚',
+            tool: 'Google Classroom',
+            title: 'Integrar Meet y Drive en Classroom',
+            description: 'Descubre cómo conectar todas las herramientas de Google para una experiencia fluida.',
+            badge: 'Video',
+            duration: '8:30',
+            views: '2.5k',
+            rating: '4.7',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)'
+        }
+    ],
+    'Moodle': [
+        {
+            icon: '🎓',
+            tool: 'Moodle',
+            title: 'Configurar un curso desde cero en Moodle',
+            description: 'Guía completa para estructurar tu curso, añadir recursos y configurar actividades.',
+            badge: 'Nuevo',
+            duration: '9:00',
+            views: '892',
+            rating: '4.8',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+        },
+        {
+            icon: '🎓',
+            tool: 'Moodle',
+            title: 'Crear cuestionarios y exámenes',
+            description: 'Aprende a diseñar evaluaciones con diferentes tipos de preguntas y configuraciones.',
+            badge: 'Video',
+            duration: '11:30',
+            views: '1.6k',
+            rating: '4.9',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+        },
+        {
+            icon: '🎓',
+            tool: 'Moodle',
+            title: 'Gestionar calificaciones en Moodle',
+            description: 'Tutorial sobre el libro de calificaciones, escalas y exportación de resultados.',
+            badge: 'Guía',
+            duration: '15 min',
+            views: '1.1k',
+            rating: '4.7',
+            level: 'Avanzado',
+            gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+        },
+        {
+            icon: '🎓',
+            tool: 'Moodle',
+            title: 'Usar foros y actividades colaborativas',
+            description: 'Fomenta la discusión y el trabajo en equipo con herramientas de colaboración.',
+            badge: 'Video',
+            duration: '10:45',
+            views: '945',
+            rating: '4.8',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)'
+        }
+    ],
+    'Teams': [
+        {
+            icon: '👥',
+            tool: 'Teams',
+            title: 'Compartir pantalla en Microsoft Teams',
+            description: 'Descubre cómo compartir tu pantalla, una ventana específica o una pizarra interactiva.',
+            badge: 'Video',
+            duration: '8:15',
+            views: '1.5k',
+            rating: '4.7',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        },
+        {
+            icon: '👥',
+            tool: 'Teams',
+            title: 'Crear equipos y canales en Teams',
+            description: 'Organiza tu clase con equipos para diferentes materias y canales temáticos.',
+            badge: 'Guía',
+            duration: '12 min',
+            views: '2.1k',
+            rating: '4.8',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        },
+        {
+            icon: '👥',
+            tool: 'Teams',
+            title: 'Asignar tareas en Teams',
+            description: 'Aprende a crear, distribuir y calificar tareas directamente en Teams.',
+            badge: 'Video',
+            duration: '9:30',
+            views: '1.8k',
+            rating: '4.9',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        },
+        {
+            icon: '👥',
+            tool: 'Teams',
+            title: 'Usar OneNote para notas colaborativas',
+            description: 'Integra OneNote en Teams para crear cuadernos de clase compartidos.',
+            badge: 'Guía',
+            duration: '11 min',
+            views: '1.3k',
+            rating: '4.6',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)'
+        }
+    ],
+    'Canva': [
+        {
+            icon: '🎨',
+            tool: 'Canva',
+            title: 'Diseñar presentaciones atractivas en Canva',
+            description: 'Crea presentaciones profesionales usando plantillas y herramientas de diseño fáciles.',
+            badge: 'Video',
+            duration: '6:45',
+            views: '3.1k',
+            rating: '4.9',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        },
+        {
+            icon: '🎨',
+            tool: 'Canva',
+            title: 'Crear infografías educativas',
+            description: 'Diseña infografías visuales que hagan el aprendizaje más atractivo.',
+            badge: 'Video',
+            duration: '8:20',
+            views: '2.4k',
+            rating: '4.8',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        },
+        {
+            icon: '🎨',
+            tool: 'Canva',
+            title: 'Hacer videos animados sencillos',
+            description: 'Aprende a crear videos educativos con animaciones y transiciones.',
+            badge: 'Guía',
+            duration: '14 min',
+            views: '1.9k',
+            rating: '4.7',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        },
+        {
+            icon: '🎨',
+            tool: 'Canva',
+            title: 'Diseñar materiales imprimibles',
+            description: 'Crea hojas de trabajo, pósters y certificados personalizados.',
+            badge: 'Video',
+            duration: '7:15',
+            views: '2.7k',
+            rating: '4.9',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)'
+        }
+    ],
+    'Kahoot': [
+        {
+            icon: '🎮',
+            tool: 'Kahoot',
+            title: 'Crear un quiz interactivo en Kahoot',
+            description: 'Aprende a diseñar cuestionarios divertidos que mantengan a tus estudiantes motivados.',
+            badge: 'Nuevo',
+            duration: '7:20',
+            views: '542',
+            rating: '5.0',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        },
+        {
+            icon: '🎮',
+            tool: 'Kahoot',
+            title: 'Usar Kahoot en modo equipo',
+            description: 'Fomenta la colaboración con quizzes diseñados para trabajo en grupo.',
+            badge: 'Video',
+            duration: '6:30',
+            views: '1.2k',
+            rating: '4.8',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        },
+        {
+            icon: '🎮',
+            tool: 'Kahoot',
+            title: 'Analizar resultados y estadísticas',
+            description: 'Interpreta los datos de tus Kahoots para mejorar la enseñanza.',
+            badge: 'Guía',
+            duration: '10 min',
+            views: '876',
+            rating: '4.9',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        },
+        {
+            icon: '🎮',
+            tool: 'Kahoot',
+            title: 'Crear desafíos para tarea',
+            description: 'Asigna Kahoots como tarea que los estudiantes pueden completar en casa.',
+            badge: 'Video',
+            duration: '5:45',
+            views: '1.5k',
+            rating: '4.7',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)'
+        }
+    ],
+    'Drive': [
+        {
+            icon: '💾',
+            tool: 'Google Drive',
+            title: 'Organizar archivos y carpetas en Drive',
+            description: 'Técnicas efectivas para mantener tu Drive ordenado y fácil de navegar.',
+            badge: 'Nuevo',
+            duration: '5:00',
+            views: '1.2k',
+            rating: '4.6',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+        },
+        {
+            icon: '💾',
+            tool: 'Google Drive',
+            title: 'Compartir y gestionar permisos',
+            description: 'Aprende a compartir archivos de forma segura con estudiantes y colegas.',
+            badge: 'Video',
+            duration: '7:45',
+            views: '2.3k',
+            rating: '4.8',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+        },
+        {
+            icon: '💾',
+            tool: 'Google Drive',
+            title: 'Usar Google Forms para encuestas',
+            description: 'Crea formularios y encuestas para recopilar información de manera eficiente.',
+            badge: 'Guía',
+            duration: '11 min',
+            views: '1.9k',
+            rating: '4.9',
+            level: 'Intermedio',
+            gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+        },
+        {
+            icon: '💾',
+            tool: 'Google Drive',
+            title: 'Colaborar en documentos en tiempo real',
+            description: 'Trabaja simultáneamente con otros en Docs, Sheets y Slides.',
+            badge: 'Video',
+            duration: '6:20',
+            views: '2.8k',
+            rating: '4.7',
+            level: 'Principiante',
+            gradient: 'linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%)'
+        }
+    ]
+};
+
+// ==========================================
+// Filter Tutorials by Tool
+// ==========================================
+function filterTutorialsByTool(toolName) {
+    const tutorialsGrid = document.querySelector('.tutorials-grid');
+    
+    if (!tutorialsGrid) return;
+    
+    // If "Todas" is selected, show default content
+    if (toolName === 'Todas') {
+        location.reload(); // Simple reload to show all
+        return;
+    }
+    
+    // Get tutorials for selected tool
+    const tutorials = tutorialsByPlatform[toolName];
+    
+    if (!tutorials) {
+        console.log('No tutorials found for:', toolName);
+        return;
+    }
+    
+    // Clear current tutorials
+    tutorialsGrid.innerHTML = '';
+    
+    // Create tutorial cards
+    tutorials.forEach(tutorial => {
+        const card = createTutorialCard(tutorial);
+        tutorialsGrid.appendChild(card);
+    });
+    
+    // Hide "Recently Added" section when filtering
+    const recentlyAddedSection = document.querySelectorAll('.tutorials-section')[1];
+    if (recentlyAddedSection && toolName !== 'Todas') {
+        recentlyAddedSection.style.display = 'none';
+    } else if (recentlyAddedSection) {
+        recentlyAddedSection.style.display = 'block';
+    }
+}
+
+// ==========================================
+// Create Tutorial Card
+// ==========================================
+function createTutorialCard(tutorial) {
+    const card = document.createElement('div');
+    card.className = 'tutorial-card';
+    
+    // Determine badge class
+    let badgeClass = 'badge-video';
+    if (tutorial.badge === 'Guía') badgeClass = 'badge-guide';
+    if (tutorial.badge === 'Nuevo') badgeClass = 'badge-new';
+    
+    // Determine level class
+    let levelClass = 'level-beginner';
+    if (tutorial.level === 'Intermedio') levelClass = 'level-intermediate';
+    if (tutorial.level === 'Avanzado') levelClass = 'level-advanced';
+    
+    card.innerHTML = `
+        <div class="tutorial-thumbnail">
+            <div class="thumbnail-placeholder" style="background: ${tutorial.gradient};">
+                <span class="play-icon">▶</span>
+            </div>
+            <span class="tutorial-badge ${badgeClass}">${tutorial.badge}</span>
+            <span class="tutorial-duration">${tutorial.duration}</span>
+        </div>
+        <div class="tutorial-content">
+            <div class="tutorial-tool">
+                <span class="tool-icon-small">${tutorial.icon}</span>
+                <span>${tutorial.tool}</span>
+            </div>
+            <h3 class="tutorial-title">${tutorial.title}</h3>
+            <p class="tutorial-description">
+                ${tutorial.description}
+            </p>
+            <div class="tutorial-footer">
+                <div class="tutorial-stats">
+                    <span class="stat-item">👁 ${tutorial.views} vistas</span>
+                    <span class="stat-item">⭐ ${tutorial.rating}</span>
+                </div>
+                <span class="tutorial-level ${levelClass}">${tutorial.level}</span>
+            </div>
+        </div>
+    `;
+    
+    return card;
 }
 
 // ==========================================
