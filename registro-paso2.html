@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Paso 2 | DocenteTech</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="auth-layout">
+        <!-- Header -->
+        <div class="auth-header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <span>DocenteTech</span>
+            </a>
+            <div>
+                <span class="text-sm text-muted">¿Ya tienes cuenta?</span>
+                <a href="#" class="text-primary" style="margin-left: 8px; font-weight: 600;">Iniciar sesión</a>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="auth-main">
+            <div class="auth-form-container">
+                <!-- Progress -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 66%;"></div>
+                    </div>
+                    <span class="progress-text">66%</span>
+                </div>
+
+                <p class="step-info">Paso 2 de 3</p>
+                <h1 class="auth-title">Personaliza tu experiencia</h1>
+                <p class="auth-subtitle">Ayúdanos a recomendarte el contenido más relevante.</p>
+
+                <!-- Form -->
+                <form id="registroForm2">
+                    <!-- Materias que enseña -->
+                    <div class="form-group">
+                        <label class="form-label">¿Qué materias enseñas?</label>
+                        <p class="form-helper">Selecciona todas las que apliquen</p>
+                        <div class="tags-container" id="materiasContainer">
+                            <span class="tag tag-selectable" data-value="matematicas">Matemáticas</span>
+                            <span class="tag tag-selectable" data-value="ciencias">Ciencias</span>
+                            <span class="tag tag-selectable" data-value="lenguaje">Lenguaje</span>
+                            <span class="tag tag-selectable" data-value="historia">Historia</span>
+                            <span class="tag tag-selectable" data-value="arte">Arte</span>
+                            <span class="tag tag-selectable" data-value="tecnologia">Tecnología</span>
+                            <span class="tag tag-selectable" data-value="educacion-fisica">Educación Física</span>
+                            <span class="tag tag-selectable" data-value="idiomas">Idiomas</span>
+                        </div>
+                    </div>
+
+                    <!-- Nivel de experiencia -->
+                    <div class="form-group">
+                        <label class="form-label">¿Cuál es tu nivel de experiencia con tecnología educativa?</label>
+                        <div class="radio-group">
+                            <label class="radio-card">
+                                <input type="radio" name="experiencia" value="principiante" checked>
+                                <div class="radio-card-content">
+                                    <span class="radio-icon">🌱</span>
+                                    <div>
+                                        <div class="radio-title">Principiante</div>
+                                        <div class="radio-subtitle">Recién empiezo a usar herramientas digitales</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="experiencia" value="intermedio">
+                                <div class="radio-card-content">
+                                    <span class="radio-icon">📚</span>
+                                    <div>
+                                        <div class="radio-title">Intermedio</div>
+                                        <div class="radio-subtitle">Uso algunas herramientas regularmente</div>
+                                    </div>
+                                </div>
+                            </label>
+                            <label class="radio-card">
+                                <input type="radio" name="experiencia" value="avanzado">
+                                <div class="radio-card-content">
+                                    <span class="radio-icon">🚀</span>
+                                    <div>
+                                        <div class="radio-title">Avanzado</div>
+                                        <div class="radio-subtitle">Domino varias herramientas tecnológicas</div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Tipo de tutoriales -->
+                    <div class="form-group">
+                        <label class="form-label">¿Qué tipo de tutoriales prefieres?</label>
+                        <div class="radio-group-inline">
+                            <label class="radio-chip">
+                                <input type="radio" name="tutoriales" value="visuales" checked>
+                                <span>📹 Visuales (video)</span>
+                            </label>
+                            <label class="radio-chip">
+                                <input type="radio" name="tutoriales" value="escritos">
+                                <span>📝 Escritos (guías)</span>
+                            </label>
+                            <label class="radio-chip">
+                                <input type="radio" name="tutoriales" value="ambos">
+                                <span>🎯 Ambos</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Desafíos frecuentes -->
+                    <div class="form-group">
+                        <label class="form-label">¿Cuáles son tus desafíos tecnológicos más frecuentes?</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="configuracion">
+                                <span>Configurar nuevas herramientas</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="compartir">
+                                <span>Compartir materiales con estudiantes</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="evaluacion">
+                                <span>Crear evaluaciones en línea</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="videoconferencias">
+                                <span>Manejar videoconferencias</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" value="organizacion">
+                                <span>Organizar archivos y recursos digitales</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas que usa -->
+                    <div class="form-group">
+                        <label class="form-label">¿Qué herramientas tecnológicas usas actualmente?</label>
+                        <p class="form-helper">Selecciona todas las que uses</p>
+                        <div class="tools-grid" id="herramientasContainer">
+                            <div class="tool-card" data-tool="google-classroom">
+                                <div class="tool-icon">📚</div>
+                                <div class="tool-name">Google Classroom</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="zoom">
+                                <div class="tool-icon">🎥</div>
+                                <div class="tool-name">Zoom</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="moodle">
+                                <div class="tool-icon">🎓</div>
+                                <div class="tool-name">Moodle</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="teams">
+                                <div class="tool-icon">👥</div>
+                                <div class="tool-name">Microsoft Teams</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="canva">
+                                <div class="tool-icon">🎨</div>
+                                <div class="tool-name">Canva</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="kahoot">
+                                <div class="tool-icon">🎮</div>
+                                <div class="tool-name">Kahoot!</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="google-drive">
+                                <div class="tool-icon">💾</div>
+                                <div class="tool-name">Google Drive</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                            <div class="tool-card" data-tool="padlet">
+                                <div class="tool-icon">📌</div>
+                                <div class="tool-name">Padlet</div>
+                                <div class="tool-checkmark">✓</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="form-actions">
+                        <a href="registro-paso1.html" class="btn btn-secondary btn-block">← Volver</a>
+                        <a href="dashboard.html" class="btn btn-primary btn-block">Continuar →</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="auth-sidebar">
+                <div class="benefit-card">
+                    <div class="benefit-icon">👨‍🏫</div>
+                    <h3 class="benefit-title">Para Docentes</h3>
+                    <p class="benefit-description">
+                        Nuestra plataforma está diseñada específicamente para las necesidades de educadores modernos.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3 class="benefit-title">IA Integrada</h3>
+                    <p class="benefit-description">
+                        Asistente inteligente disponible 24/7 para resolver tus dudas tecnológicas al instante.
+                    </p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3 class="benefit-title">Soluciones Rápidas</h3>
+                    <p class="benefit-description">
+                        Tutoriales concisos y prácticos que te ahorran tiempo y frustración.
+                    </p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        "DocenteTech transformó mi manera de enseñar. Ahora me siento confiada usando tecnología en clase."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="avatar">MG</div>
+                        <div>
+                            <div class="author-name">María González</div>
+                            <div class="author-role">Profesora de Matemáticas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

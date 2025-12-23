@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Asistente IA | DocenteTech</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="chat-layout">
+        <!-- Sidebar -->
+        <aside class="chat-sidebar">
+            <div class="chat-sidebar-header">
+                <a href="dashboard.html" class="logo">
+                    <div class="logo-icon">🎓</div>
+                    <span>DocenteTech</span>
+                </a>
+            </div>
+
+            <!-- User Profile -->
+            <div class="chat-user-profile">
+                <div class="user-avatar-large">MG</div>
+                <div class="user-details">
+                    <h3 class="user-name-large">María García</h3>
+                    <p class="user-email">maria.garcia@escuela.edu</p>
+                </div>
+                <button class="btn btn-secondary btn-sm">Editar perfil</button>
+            </div>
+
+            <!-- Chat History -->
+            <div class="chat-history">
+                <div class="chat-history-header">
+                    <h4>Conversaciones</h4>
+                    <button class="btn-icon">➕</button>
+                </div>
+
+                <div class="chat-history-list">
+                    <div class="chat-history-item active">
+                        <div class="chat-history-icon">💬</div>
+                        <div class="chat-history-content">
+                            <h5 class="chat-history-title">Problema con Zoom</h5>
+                            <p class="chat-history-preview">Cómo compartir pantalla...</p>
+                            <span class="chat-history-time">Hace 5 min</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-history-item">
+                        <div class="chat-history-icon">💬</div>
+                        <div class="chat-history-content">
+                            <h5 class="chat-history-title">Google Classroom</h5>
+                            <p class="chat-history-preview">¿Cómo asignar tareas?</p>
+                            <span class="chat-history-time">Ayer</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-history-item">
+                        <div class="chat-history-icon">💬</div>
+                        <div class="chat-history-content">
+                            <h5 class="chat-history-title">Crear presentación</h5>
+                            <p class="chat-history-preview">Ayuda con Canva...</p>
+                            <span class="chat-history-time">Hace 2 días</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-history-item">
+                        <div class="chat-history-icon">💬</div>
+                        <div class="chat-history-content">
+                            <h5 class="chat-history-title">Kahoot tutorial</h5>
+                            <p class="chat-history-preview">Crear un quiz...</p>
+                            <span class="chat-history-time">Hace 1 semana</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-history-item">
+                        <div class="chat-history-icon">💬</div>
+                        <div class="chat-history-content">
+                            <h5 class="chat-history-title">Moodle configuración</h5>
+                            <p class="chat-history-preview">Estructura de curso...</p>
+                            <span class="chat-history-time">Hace 2 semanas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Actions -->
+            <div class="chat-sidebar-footer">
+                <a href="dashboard.html" class="sidebar-action">
+                    <span class="action-icon">🏠</span>
+                    <span>Volver al Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-action">
+                    <span class="action-icon">⚙️</span>
+                    <span>Configuración</span>
+                </a>
+                <a href="#" class="sidebar-action">
+                    <span class="action-icon">📚</span>
+                    <span>Tutoriales</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-main">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="chat-header-info">
+                    <div class="assistant-avatar">🤖</div>
+                    <div>
+                        <h2 class="chat-title">Asistente IA</h2>
+                        <p class="chat-status">
+                            <span class="status-indicator"></span>
+                            Disponible 24/7
+                        </p>
+                    </div>
+                </div>
+                <div class="chat-header-actions">
+                    <button class="btn-icon" title="Búsqueda en conversación">
+                        <span>🔍</span>
+                    </button>
+                    <button class="btn-icon" title="Más opciones">
+                        <span>⋮</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="chat-message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>¡Hola María! 👋 Soy tu asistente de DocenteTech. Estoy aquí para ayudarte con cualquier duda sobre herramientas tecnológicas educativas.</p>
+                            <p>¿En qué puedo asistirte hoy?</p>
+                        </div>
+                        <span class="message-time">14:32</span>
+                    </div>
+                </div>
+
+                <!-- User Message 1 -->
+                <div class="chat-message user-message">
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>Hola, necesito ayuda con Zoom. No sé cómo compartir mi pantalla durante una clase.</p>
+                        </div>
+                        <span class="message-time">14:33</span>
+                    </div>
+                    <div class="message-avatar">MG</div>
+                </div>
+
+                <!-- Assistant Message 2 -->
+                <div class="chat-message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>¡Claro! Te ayudo con eso. Compartir pantalla en Zoom es muy sencillo. Aquí están los pasos:</p>
+                            <ol>
+                                <li><strong>Durante la reunión</strong>, busca el botón verde "Compartir pantalla" en la barra inferior</li>
+                                <li>Se abrirá una ventana mostrando todas tus pantallas y ventanas abiertas</li>
+                                <li>Selecciona lo que quieres compartir:
+                                    <ul>
+                                        <li>📺 <strong>Pantalla completa</strong> - muestra todo tu escritorio</li>
+                                        <li>🪟 <strong>Ventana específica</strong> - solo una aplicación</li>
+                                        <li>📄 <strong>Pizarra</strong> - para dibujar y escribir</li>
+                                    </ul>
+                                </li>
+                                <li>Haz clic en <strong>"Compartir"</strong></li>
+                                <li>Para detener, haz clic en <strong>"Dejar de compartir"</strong> (botón rojo arriba)</li>
+                            </ol>
+                            <p><strong>💡 Consejo:</strong> Si quieres compartir audio (por ejemplo, de un video), marca la casilla "Compartir sonido" antes de hacer clic en Compartir.</p>
+                        </div>
+                        <span class="message-time">14:34</span>
+                    </div>
+                </div>
+
+                <!-- Tutorial Suggestion Card -->
+                <div class="chat-message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-card">
+                            <div class="card-header">
+                                <span class="card-icon">🎥</span>
+                                <span class="card-label">Tutorial Recomendado</span>
+                            </div>
+                            <h4 class="card-title">Compartir pantalla en Microsoft Teams</h4>
+                            <p class="card-description">Video tutorial de 8 minutos que muestra paso a paso cómo compartir tu pantalla en Zoom.</p>
+                            <div class="card-meta">
+                                <span class="meta-item">⏱ 8:15 min</span>
+                                <span class="meta-item">⭐ 4.7</span>
+                                <span class="meta-item">👁 1.5k vistas</span>
+                            </div>
+                            <button class="btn btn-primary btn-sm btn-block">Ver Tutorial</button>
+                        </div>
+                        <span class="message-time">14:34</span>
+                    </div>
+                </div>
+
+                <!-- User Message 3 -->
+                <div class="chat-message user-message">
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>¡Perfecto! Muchas gracias. ¿Y si quiero mostrar solo una parte de mi pantalla?</p>
+                        </div>
+                        <span class="message-time">14:36</span>
+                    </div>
+                    <div class="message-avatar">MG</div>
+                </div>
+
+                <!-- Assistant Message 4 -->
+                <div class="chat-message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble">
+                            <p>¡Excelente pregunta! 👍 Para compartir solo una porción de tu pantalla:</p>
+                            <ol>
+                                <li>Haz clic en "Compartir pantalla"</li>
+                                <li>En la ventana de selección, ve a la pestaña <strong>"Avanzado"</strong></li>
+                                <li>Selecciona <strong>"Porción de pantalla"</strong></li>
+                                <li>Haz clic en "Compartir"</li>
+                                <li>Aparecerá un recuadro verde que puedes ajustar y mover</li>
+                                <li>Solo lo que esté dentro del recuadro será visible para los participantes</li>
+                            </ol>
+                            <p>Esto es útil si tienes información sensible en otras partes de tu pantalla o si quieres que los estudiantes se enfoquen en un área específica. 🎯</p>
+                            <p>¿Te gustaría saber algo más sobre Zoom o alguna otra herramienta?</p>
+                        </div>
+                        <span class="message-time">14:37</span>
+                    </div>
+                </div>
+
+                <!-- Typing Indicator (hidden by default) -->
+                <div class="chat-message assistant-message typing-indicator" style="display: none;">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-bubble typing-bubble">
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                            <span class="typing-dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-action-btn">
+                    <span class="action-icon">↩️</span>
+                    <span>¿Cómo deshacer cambios?</span>
+                </button>
+                <button class="quick-action-btn">
+                    <span class="action-icon">📞</span>
+                    <span>Contactar soporte</span>
+                </button>
+                <button class="quick-action-btn">
+                    <span class="action-icon">📜</span>
+                    <span>Ver historial completo</span>
+                </button>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <button class="input-action-btn" title="Adjuntar archivo">
+                        <span>📎</span>
+                    </button>
+                    <textarea 
+                        class="chat-input" 
+                        id="chatInput"
+                        placeholder="Escribe tu pregunta aquí..." 
+                        rows="1"
+                    ></textarea>
+                    <button class="input-action-btn" title="Mensaje de voz">
+                        <span>🎤</span>
+                    </button>
+                    <button class="btn btn-primary btn-send" id="sendButton">
+                        <span>Enviar</span>
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <p class="input-helper">
+                    💡 <strong>Tip:</strong> Sé específico en tus preguntas para obtener mejores respuestas. 
+                    Ejemplo: "¿Cómo crear una tarea en Google Classroom?" en lugar de "Ayuda con Classroom"
+                </p>
+            </div>
+        </main>
+
+        <!-- Right Sidebar (Info Panel) -->
+        <aside class="chat-info-panel">
+            <div class="info-panel-header">
+                <h3>Información</h3>
+                <button class="btn-icon">✕</button>
+            </div>
+
+            <div class="info-panel-content">
+                <!-- Assistant Info -->
+                <div class="info-section">
+                    <h4 class="info-section-title">Sobre el Asistente</h4>
+                    <div class="info-card">
+                        <div class="assistant-avatar-large">🤖</div>
+                        <p class="info-text">
+                            Asistente IA especializado en tecnología educativa. Entrenado con miles de tutoriales y casos de uso reales de docentes.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Capabilities -->
+                <div class="info-section">
+                    <h4 class="info-section-title">¿En qué puedo ayudarte?</h4>
+                    <ul class="capabilities-list">
+                        <li class="capability-item">
+                            <span class="capability-icon">🎥</span>
+                            <span>Videoconferencias (Zoom, Teams, Meet)</span>
+                        </li>
+                        <li class="capability-item">
+                            <span class="capability-icon">📚</span>
+                            <span>Plataformas educativas (Classroom, Moodle)</span>
+                        </li>
+                        <li class="capability-item">
+                            <span class="capability-icon">🎨</span>
+                            <span>Herramientas de diseño (Canva, PowerPoint)</span>
+                        </li>
+                        <li class="capability-item">
+                            <span class="capability-icon">📝</span>
+                            <span>Evaluaciones digitales (Forms, Kahoot)</span>
+                        </li>
+                        <li class="capability-item">
+                            <span class="capability-icon">💾</span>
+                            <span>Gestión de archivos (Drive, OneDrive)</span>
+                        </li>
+                        <li class="capability-item">
+                            <span class="capability-icon">🔧</span>
+                            <span>Solución de problemas técnicos</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tips -->
+                <div class="info-section">
+                    <h4 class="info-section-title">Consejos de uso</h4>
+                    <div class="tips-list">
+                        <div class="tip-item">
+                            <span class="tip-number">1</span>
+                            <p class="tip-text">Describe el problema con detalles específicos</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">2</span>
+                            <p class="tip-text">Menciona la herramienta o plataforma exacta</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">3</span>
+                            <p class="tip-text">Incluye mensajes de error si los hay</p>
+                        </div>
+                        <div class="tip-item">
+                            <span class="tip-number">4</span>
+                            <p class="tip-text">Puedes hacer preguntas de seguimiento</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support CTA -->
+                <div class="info-section">
+                    <div class="support-cta">
+                        <h4 class="cta-title">¿Necesitas ayuda humana?</h4>
+                        <p class="cta-text">Nuestro equipo de soporte está disponible de lunes a viernes, 9am - 6pm</p>
+                        <button class="btn btn-secondary btn-block">Contactar Soporte</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

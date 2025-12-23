@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | DocenteTech</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="container dashboard-header-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎓</div>
+                <span>DocenteTech</span>
+            </a>
+
+            <div class="header-search">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Buscar tutoriales, herramientas..." class="search-input">
+            </div>
+
+            <div class="header-user">
+                <button class="icon-button">
+                    <span class="notification-badge">3</span>
+                    🔔
+                </button>
+                <div class="user-menu">
+                    <div class="user-avatar">MG</div>
+                    <div class="user-info">
+                        <div class="user-name">María García</div>
+                        <div class="user-role">Profesora</div>
+                    </div>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="dashboard-hero">
+        <div class="container">
+            <h1 class="dashboard-hero-title">¡Hola, María! 👋</h1>
+            <p class="dashboard-hero-subtitle">¿Qué te gustaría aprender hoy?</p>
+            
+            <div class="hero-search-box">
+                <span class="search-icon-large">🔍</span>
+                <input type="text" placeholder='Ej: "Cómo crear una reunión en Zoom"' class="hero-search-input">
+                <button class="btn btn-primary">Buscar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+        <div class="container">
+            <!-- Tool Filters -->
+            <div class="tool-filters">
+                <div class="section-header">
+                    <h2 class="section-title">Filtrar por herramienta</h2>
+                </div>
+                <div class="filters-scroll">
+                    <button class="filter-chip active">
+                        <span class="filter-icon">📚</span>
+                        <span>Todas</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">🎥</span>
+                        <span>Zoom</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">📚</span>
+                        <span>Google Classroom</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">👥</span>
+                        <span>Teams</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">🎓</span>
+                        <span>Moodle</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">🎨</span>
+                        <span>Canva</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">🎮</span>
+                        <span>Kahoot</span>
+                    </button>
+                    <button class="filter-chip">
+                        <span class="filter-icon">💾</span>
+                        <span>Drive</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Most Searched Tutorials -->
+            <section class="tutorials-section">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Más buscados esta semana</h2>
+                        <p class="section-subtitle">Los tutoriales más populares entre docentes</p>
+                    </div>
+                    <a href="#" class="link-button">Ver todos →</a>
+                </div>
+
+                <div class="tutorials-grid">
+                    <!-- Tutorial Card 1 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-video">Video</span>
+                            <span class="tutorial-duration">5:30</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">🎥</span>
+                                <span>Zoom</span>
+                            </div>
+                            <h3 class="tutorial-title">Cómo crear salas de reunión en Zoom</h3>
+                            <p class="tutorial-description">
+                                Aprende a organizar grupos pequeños de estudiantes en salas separadas durante tus clases virtuales.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 2.3k vistas</span>
+                                    <span class="stat-item">⭐ 4.8</span>
+                                </div>
+                                <span class="tutorial-level level-beginner">Principiante</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial Card 2 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-guide">Guía</span>
+                            <span class="tutorial-duration">10 min</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">📚</span>
+                                <span>Google Classroom</span>
+                            </div>
+                            <h3 class="tutorial-title">Subir tareas y calificar en Classroom</h3>
+                            <p class="tutorial-description">
+                                Guía paso a paso para asignar tareas, recibir entregas y proporcionar retroalimentación.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 1.8k vistas</span>
+                                    <span class="stat-item">⭐ 4.9</span>
+                                </div>
+                                <span class="tutorial-level level-beginner">Principiante</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial Card 3 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-video">Video</span>
+                            <span class="tutorial-duration">8:15</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">👥</span>
+                                <span>Teams</span>
+                            </div>
+                            <h3 class="tutorial-title">Compartir pantalla en Microsoft Teams</h3>
+                            <p class="tutorial-description">
+                                Descubre cómo compartir tu pantalla, una ventana específica o una pizarra interactiva.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 1.5k vistas</span>
+                                    <span class="stat-item">⭐ 4.7</span>
+                                </div>
+                                <span class="tutorial-level level-intermediate">Intermedio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial Card 4 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-video">Video</span>
+                            <span class="tutorial-duration">6:45</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">🎨</span>
+                                <span>Canva</span>
+                            </div>
+                            <h3 class="tutorial-title">Diseñar presentaciones atractivas en Canva</h3>
+                            <p class="tutorial-description">
+                                Crea presentaciones profesionales usando plantillas y herramientas de diseño fáciles.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 3.1k vistas</span>
+                                    <span class="stat-item">⭐ 4.9</span>
+                                </div>
+                                <span class="tutorial-level level-beginner">Principiante</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recently Added Tutorials -->
+            <section class="tutorials-section">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Agregados recientemente</h2>
+                        <p class="section-subtitle">Contenido nuevo para mantenerte actualizado</p>
+                    </div>
+                    <a href="#" class="link-button">Ver todos →</a>
+                </div>
+
+                <div class="tutorials-grid">
+                    <!-- Tutorial Card 5 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-new">Nuevo</span>
+                            <span class="tutorial-duration">7:20</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">🎮</span>
+                                <span>Kahoot</span>
+                            </div>
+                            <h3 class="tutorial-title">Crear un quiz interactivo en Kahoot</h3>
+                            <p class="tutorial-description">
+                                Aprende a diseñar cuestionarios divertidos que mantengan a tus estudiantes motivados.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 542 vistas</span>
+                                    <span class="stat-item">⭐ 5.0</span>
+                                </div>
+                                <span class="tutorial-level level-beginner">Principiante</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial Card 6 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-new">Nuevo</span>
+                            <span class="tutorial-duration">9:00</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">🎓</span>
+                                <span>Moodle</span>
+                            </div>
+                            <h3 class="tutorial-title">Configurar un curso desde cero en Moodle</h3>
+                            <p class="tutorial-description">
+                                Guía completa para estructurar tu curso, añadir recursos y configurar actividades.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 892 vistas</span>
+                                    <span class="stat-item">⭐ 4.8</span>
+                                </div>
+                                <span class="tutorial-level level-intermediate">Intermedio</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial Card 7 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-new">Nuevo</span>
+                            <span class="tutorial-duration">5:00</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">💾</span>
+                                <span>Google Drive</span>
+                            </div>
+                            <h3 class="tutorial-title">Organizar archivos y carpetas en Drive</h3>
+                            <p class="tutorial-description">
+                                Técnicas efectivas para mantener tu Drive ordenado y fácil de navegar.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 1.2k vistas</span>
+                                    <span class="stat-item">⭐ 4.6</span>
+                                </div>
+                                <span class="tutorial-level level-beginner">Principiante</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tutorial Card 8 -->
+                    <div class="tutorial-card">
+                        <div class="tutorial-thumbnail">
+                            <div class="thumbnail-placeholder" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+                                <span class="play-icon">▶</span>
+                            </div>
+                            <span class="tutorial-badge badge-new">Nuevo</span>
+                            <span class="tutorial-duration">4:30</span>
+                        </div>
+                        <div class="tutorial-content">
+                            <div class="tutorial-tool">
+                                <span class="tool-icon-small">📌</span>
+                                <span>Padlet</span>
+                            </div>
+                            <h3 class="tutorial-title">Colaboración con Padlet en tiempo real</h3>
+                            <p class="tutorial-description">
+                                Usa Padlet para crear murales colaborativos donde los estudiantes puedan participar.
+                            </p>
+                            <div class="tutorial-footer">
+                                <div class="tutorial-stats">
+                                    <span class="stat-item">👁 678 vistas</span>
+                                    <span class="stat-item">⭐ 4.9</span>
+                                </div>
+                                <span class="tutorial-level level-beginner">Principiante</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="cta-card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">¿No encuentras lo que buscas?</h2>
+                        <p class="cta-description">
+                            Solicita un tutorial personalizado o chatea con nuestro asistente IA para obtener ayuda inmediata.
+                        </p>
+                        <div class="cta-actions">
+                            <a href="chat.html" class="btn btn-primary">💬 Chatear con IA</a>
+                            <button class="btn btn-outline">📝 Solicitar tutorial</button>
+                        </div>
+                    </div>
+                    <div class="cta-illustration">
+                        <div class="illustration-placeholder">
+                            🤖
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon">🎓</div>
+                        <span>DocenteTech</span>
+                    </div>
+                    <p class="footer-description">
+                        Empoderando a docentes con tecnología educativa accesible.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Plataforma</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Tutoriales</a></li>
+                        <li><a href="#">Asistente IA</a></li>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Comunidad</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Soporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">Contacto</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Estado del servicio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Términos de uso</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 DocenteTech. Todos los derechos reservados.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">LinkedIn</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
